@@ -49,3 +49,7 @@ API: `GET /api/lab/sources`, `POST /api/lab/upload` (multipart CSV), `POST /api/
 ## Restaurant analytics
 
 Analytics uses the operational demo or the currently uploaded sales CSV. Includes observed daily sales/revenue/waste trends, weekday averages and observation counts, dish rankings by sales or revenue, waste contributions, dish mix, coefficient of variation, zero-sales rows, and sold-all-prep review signals. Recent changes compare per-observed-day averages in the last 14 calendar days with the prior 14, anchored to the dataset's end date. Missing dates are not filled; prices and prepared quantities may be incomplete. Revenue is not profit. Sold-all-prep is not proof of a stockout. Scenario sandbox changes do not alter operational analytics.
+
+## Frontend reference fidelity
+
+The overview, upload, forecast, and inventory now use structural templates adapted directly from the HTML in `stitch_restaurant_demand_ml_forecaster(1).zip`, with compiled local Tailwind utilities from its theme. Live slots replace the supplied screenshots' simulated statistics and integrations. Original full-width panel hierarchy, rectilinear boundaries, orange/green accent system, telemetry headers, forecast/run-list arrangement, upload descriptor/schema grid, and inventory/provisioning split are retained. The scenario workspace and Analytics page extend this system. Unsupported claims, sensor readings, and vendor automation have been replaced with accurate working-demo descriptions.

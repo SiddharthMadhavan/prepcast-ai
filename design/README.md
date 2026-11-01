@@ -1,0 +1,1 @@
+Reference page skeletons and Tailwind theme are adapted directly from the user supplied Stitch ZIP. Dynamic slots replace mock values with working data. Screenshots were reviewed for overview, upload, demand forecast, and inventory. Build CSS from repository root with: npx tailwindcss@3.4.17 -c design/tailwind.config.cjs -i design/input.css -o static/reference.css --minify
