@@ -27,3 +27,23 @@ def test_holdout_does_not_read_future():
 def test_pages(client):
     assert client.get('/').status_code==200
     assert client.get('/health').json=={'status':'ok'}
+def test_scenario_edit_changes_prediction_and_preserves_source(client):
+    sources=client.get('/api/lab/sources').json['sources']
+    assert len(sources)==3 and sources[0]['rows']!=sources[1]['rows']
+    rows=sources[0]['rows']; day=rows[-1]['date']
+    before=client.post('/api/lab/scenario',json={'rows':rows,'horizon':7}).json
+    after=client.post('/api/lab/scenario',json={'rows':rows,'edits':{day:2000},'horizon':7}).json
+    assert before['baseline']==after['baseline']
+    assert sum(x['predicted'] for x in after['forecast'])>sum(x['predicted'] for x in before['forecast'])
+    assert client.get('/api/lab/sources').json['sources']==sources
+
+def test_scenario_validation(client):
+    rows=client.get('/api/lab/sources').json['sources'][0]['rows']
+    for payload in [{'rows':rows,'edits':{rows[-1]['date']:-1}},{'rows':rows,'edits':{'2099-01-01':10}},{'rows':rows,'horizon':99},{'rows':rows[:2]},{'rows':rows,'edits':{rows[-1]['date']:'bad'}}]:
+        assert client.post('/api/lab/scenario',json=payload).status_code==400
+
+def test_lab_upload(client):
+    csv=client.get('/api/demo.csv').data
+    result=client.post('/api/lab/upload',data={'file':(io.BytesIO(csv),'demo.csv')})
+    assert result.status_code==200 and len(result.json['rows'])==112
+    assert not result.json['synthetic']

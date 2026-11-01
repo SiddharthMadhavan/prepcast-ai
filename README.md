@@ -37,3 +37,11 @@ pytest -q
 ```
 
 Render: Python web service, build `pip install -r requirements.txt`, start `gunicorn app:app --bind 0.0.0.0:$PORT --workers 2`, free plan, health endpoint `/health`. No API keys required.
+
+## Interactive what-if workspace
+
+The demand forecast screen includes a sandbox with three selectable synthetic restaurant histories: Neighborhood Kitchen, Office District, and Weekend Bistro. Multiple sources can be overlaid; they are forecast independently and never silently pooled. Upload additional CSVs (daily totals across dishes), up to six sources and 366 dates per source. Bundled sources use the most recent 28 days; uploaded sources use all their observations for calculation and show the last 28 on the graph.
+
+Select an editing source, drag its historical square handles vertically, use arrow keys on a focused handle, or type exact daily sales in the historical table. Recalculation is debounced; outdated responses are discarded. Compare original and edited forecasts and total portion changes for 1/7/30 days. Reset restores the active source. Original CSV files remain unchanged. Changes live only in the current tab. This workspace is separate from the operational run-list. Forecast ranges are approximate, not calibrated. Source differences and user edits are illustrative associations, not causal effects.
+
+API: `GET /api/lab/sources`, `POST /api/lab/upload` (multipart CSV), `POST /api/lab/scenario` (JSON rows, date-keyed edits, horizon). Inputs reject duplicates, non-finite/negative values, unknown edit dates, and unsupported horizons.

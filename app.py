@@ -70,4 +70,48 @@ def forecast():
     except (ValueError,UnicodeDecodeError) as e: return jsonify(error=str(e)),400
 @app.errorhandler(413)
 def oversized(e): return jsonify(error='Maximum upload size is 2 MB.'),413
+# Scenario datasets are independent synthetic restaurants, not live POS integrations.
+LAB_SOURCES = [dict(id='neighborhood',name='Neighborhood Kitchen',description='Steady weekday trade / weekend lift'),dict(id='office',name='Office District',description='Weekday lunch traffic / quieter weekends'),dict(id='weekend',name='Weekend Bistro',description='Strong weekend peaks / higher variability')]
+def lab_rows(source):
+    rng=random.Random(17); result=[]
+    for row in analyze(DEMO,1)['history']:
+        d=date.fromisoformat(row['date']); value=row['sales']
+        if source=='office': value=round(value*(.48 if d.weekday()>=5 else 1.18))
+        if source=='weekend': value=round(value*(1.55 if d.weekday()>=5 else .7)*rng.uniform(.88,1.12))
+        result.append(dict(date=row['date'],sales=value,dish='All dishes',prepared=value,price=0))
+    return result
+@app.get('/api/lab/sources')
+def lab_sources():
+    return jsonify(sources=[dict(**s,rows=lab_rows(s['id']),synthetic=True) for s in LAB_SOURCES])
+@app.post('/api/lab/upload')
+def lab_upload():
+    try:
+        f=request.files.get('file')
+        if not f: raise ValueError('Choose a CSV file.')
+        rows=parse(f.read().decode('utf-8')); daily={}
+        for r in rows: daily[r['date']]=daily.get(r['date'],0)+r['sales']
+        return jsonify(rows=[dict(date=d,sales=v) for d,v in sorted(daily.items())],synthetic=False)
+    except (ValueError,UnicodeDecodeError) as e: return jsonify(error=str(e)),400
+@app.post('/api/lab/scenario')
+def lab_scenario():
+    try:
+        body=request.get_json(silent=True) or {}; horizon=body.get('horizon',7)
+        if type(horizon) is not int or horizon not in (1,7,30): raise ValueError('Invalid horizon.')
+        supplied=body.get('rows'); edits=body.get('edits',{})
+        if not isinstance(supplied,list) or not 14<=len(supplied)<=366 or not isinstance(edits,dict): raise ValueError('Provide 14–366 daily observations.')
+        original=[]; seen=set()
+        for r in supplied:
+            day=date.fromisoformat(r['date']).isoformat(); value=r['sales']
+            if day in seen or type(value) not in (int,float) or not math.isfinite(value) or not 0<=value<=1000000: raise ValueError('Invalid or duplicate daily observation.')
+            seen.add(day); original.append(dict(date=day,sales=value,dish='All dishes',prepared=value,price=0))
+        if set(edits)-seen: raise ValueError('Edit dates must exist in history.')
+        changed=[]
+        for r in original:
+            value=edits.get(r['date'],r['sales'])
+            if type(value) not in (int,float) or not math.isfinite(value) or not 0<=value<=1000000: raise ValueError('Sales must be between 0 and 1,000,000.')
+            changed.append(dict(r,sales=value,prepared=value))
+        original.sort(key=lambda r:r['date']);changed.sort(key=lambda r:r['date'])
+        base=analyze(original,horizon); scenario=analyze(changed,horizon)
+        return jsonify(history=changed,baseline=base['forecasts'],forecast=scenario['forecasts'],model=scenario['model'],interval=scenario['interval'])
+    except (ValueError,TypeError,KeyError,OverflowError) as e: return jsonify(error=str(e)),400
 if __name__=='__main__': app.run(host='0.0.0.0',port=8080)
