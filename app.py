@@ -1,0 +1,73 @@
+"""PrepCast demo: stateless forecasts; uploaded records never leave the request."""
+import csv, io, math, random, statistics
+from datetime import date, timedelta
+from pathlib import Path
+from flask import Flask, request, jsonify, send_from_directory
+app = Flask(__name__, static_folder='static')
+app.config['MAX_CONTENT_LENGTH'] = 2 * 1024 * 1024
+MENU = [('Masala Dosa',95,90),('Idli Set',65,120),('Chicken Biryani',210,75),('Veg Meals',140,105),('Paneer Butter Masala',190,48),('Filter Coffee',35,160),('Ghee Roast',110,64),('Lemon Rice',85,58)]
+def synthetic():
+    rng=random.Random(42); rows=[]
+    for i in range(112):
+        day=date(2026,7,13)+timedelta(days=i)
+        for dish,price,base in MENU:
+            demand=max(0,round(base*(1.25 if day.weekday()>=5 else 1)*(1+i*.0015)+rng.gauss(0,base*.12)))
+            prepared=max(0,round(demand+rng.gauss(8,10)))
+            sold=min(prepared,demand)
+            rows.append(dict(date=day.isoformat(),dish=dish,sales=sold,prepared=prepared,price=price))
+    return rows
+DEMO=synthetic()
+def parse(text):
+    reader=csv.DictReader(io.StringIO(text.lstrip('\ufeff')))
+    if not {'date','dish','sales'}.issubset(reader.fieldnames or []): raise ValueError('Required columns: date, dish, sales. Optional: prepared, price.')
+    out=[]; seen=set()
+    for n,r in enumerate(reader,2):
+        if n>20001: raise ValueError('Maximum 20,000 rows.')
+        try:
+            d=date.fromisoformat(r['date']).isoformat(); dish=r['dish'].strip(); sales=float(r['sales']); prepared=float(r.get('prepared') or sales); price=float(r.get('price') or 0)
+            if not dish or len(dish)>100 or not all(math.isfinite(x) and 0<=x<=1e7 for x in [sales,prepared,price]) or prepared<sales: raise ValueError()
+            if (d,dish) in seen: raise ValueError()
+            seen.add((d,dish)); out.append(dict(date=d,dish=dish,sales=sales,prepared=prepared,price=price))
+        except (ValueError,TypeError,KeyError): raise ValueError(f'Row {n}: invalid date, quantity, price, or duplicate dish/date. Prepared must be at least sales.')
+    if not out: raise ValueError('CSV has no sales records.')
+    if len({r['dish'] for r in out})>100: raise ValueError('Maximum 100 dishes.')
+    if len({r['date'] for r in out})<14: raise ValueError('Provide at least 14 distinct dates.')
+    return sorted(out,key=lambda r:r['date'])
+def predict(history,target):
+    matching=[r['sales'] for r in history if date.fromisoformat(r['date']).weekday()==target.weekday()][-6:]
+    recent=[r['sales'] for r in history[-14:]]
+    return .75*statistics.mean(matching or recent)+.25*statistics.mean(recent)
+def analyze(rows,horizon):
+    last=date.fromisoformat(max(r['date'] for r in rows)); dishes=sorted({r['dish'] for r in rows}); forecasts=[]; errors=[]; naive_errors=[]
+    for dish in dishes:
+        h=sorted([r for r in rows if r['dish']==dish],key=lambda r:r['date']); residual=[]
+        for i in range(max(7,len(h)-14),len(h)):
+            p=predict(h[:i],date.fromisoformat(h[i]['date'])); residual.append(h[i]['sales']-p); errors.append(abs(residual[-1])); naive_errors.append(abs(h[i]['sales']-statistics.mean(x['sales'] for x in h[max(0,i-7):i])))
+        spread=statistics.stdev(residual) if len(residual)>1 else max(5,statistics.mean(r['sales'] for r in h)*.25)
+        for offset in range(1,horizon+1):
+            target=last+timedelta(days=offset); p=max(0,round(predict(h,target))); width=math.ceil(1.64*spread*math.sqrt(1+offset/14))
+            forecasts.append(dict(date=target.isoformat(),dish=dish,predicted=p,lower=max(0,p-width),upper=p+width,prep=math.ceil(p+spread*.5),price=h[-1]['price']))
+    daily={}
+    for r in rows:
+        v=daily.setdefault(r['date'],dict(date=r['date'],sales=0,waste=0)); v['sales']+=r['sales']; v['waste']+=r['prepared']-r['sales']
+    total=sum(r['sales'] for r in rows); waste=sum(r['prepared']-r['sales'] for r in rows)
+    return dict(forecasts=forecasts,history=sorted(daily.values(),key=lambda r:r['date'])[-28:],summary=dict(rows=len(rows),dishes=len(dishes),start=min(r['date'] for r in rows),end=last.isoformat(),sales=total,waste=waste,wasteRate=round(waste/(total+waste)*100,1) if total+waste else 0,mae=round(statistics.mean(errors),2) if errors else None,baselineMae=round(statistics.mean(naive_errors),2) if naive_errors else None,validationPoints=len(errors)),model='Weekday + recent mean ensemble',interval='Approximate 90% residual range; not calibrated')
+@app.get('/')
+def index(): return send_from_directory('static','index.html')
+@app.get('/health')
+def health(): return jsonify(status='ok')
+@app.get('/api/demo.csv')
+def demo_csv():
+    buf=io.StringIO(); w=csv.DictWriter(buf,fieldnames=['date','dish','sales','prepared','price']); w.writeheader(); w.writerows(DEMO)
+    return app.response_class(buf.getvalue(),mimetype='text/csv',headers={'Content-Disposition':'attachment; filename=prepcast_synthetic_sales.csv'})
+@app.post('/api/forecast')
+def forecast():
+    try:
+        horizon=int(request.form.get('horizon','7'))
+        if horizon not in (1,7,30): raise ValueError('Horizon must be 1, 7 or 30 days.')
+        upload=request.files.get('file'); rows=parse(upload.read().decode('utf-8')) if upload else DEMO
+        return jsonify(**analyze(rows,horizon),synthetic=not bool(upload))
+    except (ValueError,UnicodeDecodeError) as e: return jsonify(error=str(e)),400
+@app.errorhandler(413)
+def oversized(e): return jsonify(error='Maximum upload size is 2 MB.'),413
+if __name__=='__main__': app.run(host='0.0.0.0',port=8080)

@@ -1,0 +1,897 @@
+date,dish,sales,prepared,price
+2026-07-13,Masala Dosa,88,94,95
+2026-07-13,Idli Set,118,133,65
+2026-07-13,Chicken Biryani,67,67,210
+2026-07-13,Veg Meals,109,114,140
+2026-07-13,Paneer Butter Masala,47,56,190
+2026-07-13,Filter Coffee,164,184,35
+2026-07-13,Ghee Roast,69,78,110
+2026-07-13,Lemon Rice,51,51,85
+2026-07-14,Masala Dosa,93,114,95
+2026-07-14,Idli Set,121,128,65
+2026-07-14,Chicken Biryani,73,73,210
+2026-07-14,Veg Meals,101,114,140
+2026-07-14,Paneer Butter Masala,53,59,190
+2026-07-14,Filter Coffee,167,177,35
+2026-07-14,Ghee Roast,67,67,110
+2026-07-14,Lemon Rice,55,55,85
+2026-07-15,Masala Dosa,62,64,95
+2026-07-15,Idli Set,107,124,65
+2026-07-15,Chicken Biryani,77,77,210
+2026-07-15,Veg Meals,114,114,140
+2026-07-15,Paneer Butter Masala,48,53,190
+2026-07-15,Filter Coffee,163,179,35
+2026-07-15,Ghee Roast,69,80,110
+2026-07-15,Lemon Rice,63,76,85
+2026-07-16,Masala Dosa,84,85,95
+2026-07-16,Idli Set,114,127,65
+2026-07-16,Chicken Biryani,73,104,210
+2026-07-16,Veg Meals,92,92,140
+2026-07-16,Paneer Butter Masala,53,75,190
+2026-07-16,Filter Coffee,170,186,35
+2026-07-16,Ghee Roast,75,82,110
+2026-07-16,Lemon Rice,48,51,85
+2026-07-17,Masala Dosa,95,95,95
+2026-07-17,Idli Set,121,132,65
+2026-07-17,Chicken Biryani,73,88,210
+2026-07-17,Veg Meals,113,144,140
+2026-07-17,Paneer Butter Masala,52,54,190
+2026-07-17,Filter Coffee,150,150,35
+2026-07-17,Ghee Roast,72,74,110
+2026-07-17,Lemon Rice,58,73,85
+2026-07-18,Masala Dosa,106,111,95
+2026-07-18,Idli Set,122,122,65
+2026-07-18,Chicken Biryani,89,101,210
+2026-07-18,Veg Meals,147,155,140
+2026-07-18,Paneer Butter Masala,62,72,190
+2026-07-18,Filter Coffee,222,239,35
+2026-07-18,Ghee Roast,81,81,110
+2026-07-18,Lemon Rice,79,91,85
+2026-07-19,Masala Dosa,127,135,95
+2026-07-19,Idli Set,179,183,65
+2026-07-19,Chicken Biryani,109,118,210
+2026-07-19,Veg Meals,123,123,140
+2026-07-19,Paneer Butter Masala,60,82,190
+2026-07-19,Filter Coffee,217,232,35
+2026-07-19,Ghee Roast,62,77,110
+2026-07-19,Lemon Rice,77,80,85
+2026-07-20,Masala Dosa,84,92,95
+2026-07-20,Idli Set,143,143,65
+2026-07-20,Chicken Biryani,72,94,210
+2026-07-20,Veg Meals,100,104,140
+2026-07-20,Paneer Butter Masala,45,45,190
+2026-07-20,Filter Coffee,162,162,35
+2026-07-20,Ghee Roast,71,79,110
+2026-07-20,Lemon Rice,75,86,85
+2026-07-21,Masala Dosa,101,101,95
+2026-07-21,Idli Set,120,131,65
+2026-07-21,Chicken Biryani,83,83,210
+2026-07-21,Veg Meals,119,133,140
+2026-07-21,Paneer Butter Masala,57,72,190
+2026-07-21,Filter Coffee,163,166,35
+2026-07-21,Ghee Roast,55,65,110
+2026-07-21,Lemon Rice,57,85,85
+2026-07-22,Masala Dosa,85,96,95
+2026-07-22,Idli Set,99,103,65
+2026-07-22,Chicken Biryani,78,94,210
+2026-07-22,Veg Meals,125,133,140
+2026-07-22,Paneer Butter Masala,42,55,190
+2026-07-22,Filter Coffee,172,185,35
+2026-07-22,Ghee Roast,59,78,110
+2026-07-22,Lemon Rice,59,74,85
+2026-07-23,Masala Dosa,105,119,95
+2026-07-23,Idli Set,126,156,65
+2026-07-23,Chicken Biryani,78,83,210
+2026-07-23,Veg Meals,108,131,140
+2026-07-23,Paneer Butter Masala,49,62,190
+2026-07-23,Filter Coffee,185,188,35
+2026-07-23,Ghee Roast,52,63,110
+2026-07-23,Lemon Rice,60,62,85
+2026-07-24,Masala Dosa,101,115,95
+2026-07-24,Idli Set,108,121,65
+2026-07-24,Chicken Biryani,67,67,210
+2026-07-24,Veg Meals,112,120,140
+2026-07-24,Paneer Butter Masala,44,57,190
+2026-07-24,Filter Coffee,172,174,35
+2026-07-24,Ghee Roast,68,86,110
+2026-07-24,Lemon Rice,54,66,85
+2026-07-25,Masala Dosa,115,146,95
+2026-07-25,Idli Set,126,141,65
+2026-07-25,Chicken Biryani,93,100,210
+2026-07-25,Veg Meals,158,166,140
+2026-07-25,Paneer Butter Masala,74,78,190
+2026-07-25,Filter Coffee,210,213,35
+2026-07-25,Ghee Roast,76,85,110
+2026-07-25,Lemon Rice,72,82,85
+2026-07-26,Masala Dosa,92,120,95
+2026-07-26,Idli Set,151,176,65
+2026-07-26,Chicken Biryani,87,98,210
+2026-07-26,Veg Meals,173,173,140
+2026-07-26,Paneer Butter Masala,53,56,190
+2026-07-26,Filter Coffee,213,228,35
+2026-07-26,Ghee Roast,91,96,110
+2026-07-26,Lemon Rice,63,67,85
+2026-07-27,Masala Dosa,105,118,95
+2026-07-27,Idli Set,94,102,65
+2026-07-27,Chicken Biryani,89,118,210
+2026-07-27,Veg Meals,114,125,140
+2026-07-27,Paneer Butter Masala,42,42,190
+2026-07-27,Filter Coffee,164,177,35
+2026-07-27,Ghee Roast,70,73,110
+2026-07-27,Lemon Rice,51,51,85
+2026-07-28,Masala Dosa,80,94,95
+2026-07-28,Idli Set,89,94,65
+2026-07-28,Chicken Biryani,81,104,210
+2026-07-28,Veg Meals,108,126,140
+2026-07-28,Paneer Butter Masala,47,48,190
+2026-07-28,Filter Coffee,151,174,35
+2026-07-28,Ghee Roast,73,86,110
+2026-07-28,Lemon Rice,82,90,85
+2026-07-29,Masala Dosa,99,110,95
+2026-07-29,Idli Set,120,151,65
+2026-07-29,Chicken Biryani,84,84,210
+2026-07-29,Veg Meals,102,114,140
+2026-07-29,Paneer Butter Masala,49,49,190
+2026-07-29,Filter Coffee,110,110,35
+2026-07-29,Ghee Roast,65,72,110
+2026-07-29,Lemon Rice,62,62,85
+2026-07-30,Masala Dosa,67,67,95
+2026-07-30,Idli Set,128,140,65
+2026-07-30,Chicken Biryani,86,102,210
+2026-07-30,Veg Meals,105,126,140
+2026-07-30,Paneer Butter Masala,48,49,190
+2026-07-30,Filter Coffee,154,156,35
+2026-07-30,Ghee Roast,49,59,110
+2026-07-30,Lemon Rice,61,65,85
+2026-07-31,Masala Dosa,85,97,95
+2026-07-31,Idli Set,148,156,65
+2026-07-31,Chicken Biryani,72,74,210
+2026-07-31,Veg Meals,102,102,140
+2026-07-31,Paneer Butter Masala,49,58,190
+2026-07-31,Filter Coffee,200,217,35
+2026-07-31,Ghee Roast,74,75,110
+2026-07-31,Lemon Rice,61,61,85
+2026-08-01,Masala Dosa,119,131,95
+2026-08-01,Idli Set,143,171,65
+2026-08-01,Chicken Biryani,91,91,210
+2026-08-01,Veg Meals,142,146,140
+2026-08-01,Paneer Butter Masala,62,75,190
+2026-08-01,Filter Coffee,201,201,35
+2026-08-01,Ghee Roast,73,89,110
+2026-08-01,Lemon Rice,84,111,85
+2026-08-02,Masala Dosa,122,122,95
+2026-08-02,Idli Set,155,155,65
+2026-08-02,Chicken Biryani,111,122,210
+2026-08-02,Veg Meals,121,149,140
+2026-08-02,Paneer Butter Masala,55,55,190
+2026-08-02,Filter Coffee,212,213,35
+2026-08-02,Ghee Roast,83,86,110
+2026-08-02,Lemon Rice,78,78,85
+2026-08-03,Masala Dosa,96,122,95
+2026-08-03,Idli Set,112,122,65
+2026-08-03,Chicken Biryani,79,80,210
+2026-08-03,Veg Meals,116,125,140
+2026-08-03,Paneer Butter Masala,44,70,190
+2026-08-03,Filter Coffee,180,186,35
+2026-08-03,Ghee Roast,61,61,110
+2026-08-03,Lemon Rice,68,75,85
+2026-08-04,Masala Dosa,98,104,95
+2026-08-04,Idli Set,133,140,65
+2026-08-04,Chicken Biryani,84,90,210
+2026-08-04,Veg Meals,119,134,140
+2026-08-04,Paneer Butter Masala,48,48,190
+2026-08-04,Filter Coffee,147,148,35
+2026-08-04,Ghee Roast,59,76,110
+2026-08-04,Lemon Rice,60,84,85
+2026-08-05,Masala Dosa,118,126,95
+2026-08-05,Idli Set,102,106,65
+2026-08-05,Chicken Biryani,70,70,210
+2026-08-05,Veg Meals,105,116,140
+2026-08-05,Paneer Butter Masala,47,47,190
+2026-08-05,Filter Coffee,151,177,35
+2026-08-05,Ghee Roast,65,65,110
+2026-08-05,Lemon Rice,57,75,85
+2026-08-06,Masala Dosa,86,99,95
+2026-08-06,Idli Set,135,150,65
+2026-08-06,Chicken Biryani,90,92,210
+2026-08-06,Veg Meals,123,123,140
+2026-08-06,Paneer Butter Masala,47,67,190
+2026-08-06,Filter Coffee,182,190,35
+2026-08-06,Ghee Roast,57,71,110
+2026-08-06,Lemon Rice,55,55,85
+2026-08-07,Masala Dosa,86,96,95
+2026-08-07,Idli Set,94,106,65
+2026-08-07,Chicken Biryani,79,81,210
+2026-08-07,Veg Meals,122,136,140
+2026-08-07,Paneer Butter Masala,46,47,190
+2026-08-07,Filter Coffee,172,172,35
+2026-08-07,Ghee Roast,64,66,110
+2026-08-07,Lemon Rice,61,71,85
+2026-08-08,Masala Dosa,117,136,95
+2026-08-08,Idli Set,159,164,65
+2026-08-08,Chicken Biryani,87,102,210
+2026-08-08,Veg Meals,143,166,140
+2026-08-08,Paneer Butter Masala,58,66,190
+2026-08-08,Filter Coffee,207,214,35
+2026-08-08,Ghee Roast,74,74,110
+2026-08-08,Lemon Rice,81,96,85
+2026-08-09,Masala Dosa,129,159,95
+2026-08-09,Idli Set,151,159,65
+2026-08-09,Chicken Biryani,98,125,210
+2026-08-09,Veg Meals,115,128,140
+2026-08-09,Paneer Butter Masala,36,36,190
+2026-08-09,Filter Coffee,163,163,35
+2026-08-09,Ghee Roast,90,90,110
+2026-08-09,Lemon Rice,70,70,85
+2026-08-10,Masala Dosa,97,97,95
+2026-08-10,Idli Set,142,142,65
+2026-08-10,Chicken Biryani,71,80,210
+2026-08-10,Veg Meals,110,132,140
+2026-08-10,Paneer Butter Masala,47,47,190
+2026-08-10,Filter Coffee,156,158,35
+2026-08-10,Ghee Roast,72,84,110
+2026-08-10,Lemon Rice,60,77,85
+2026-08-11,Masala Dosa,88,95,95
+2026-08-11,Idli Set,128,151,65
+2026-08-11,Chicken Biryani,77,81,210
+2026-08-11,Veg Meals,96,111,140
+2026-08-11,Paneer Butter Masala,47,58,190
+2026-08-11,Filter Coffee,130,148,35
+2026-08-11,Ghee Roast,57,57,110
+2026-08-11,Lemon Rice,63,63,85
+2026-08-12,Masala Dosa,93,102,95
+2026-08-12,Idli Set,111,132,65
+2026-08-12,Chicken Biryani,80,80,210
+2026-08-12,Veg Meals,91,107,140
+2026-08-12,Paneer Butter Masala,43,47,190
+2026-08-12,Filter Coffee,170,185,35
+2026-08-12,Ghee Roast,65,74,110
+2026-08-12,Lemon Rice,55,76,85
+2026-08-13,Masala Dosa,89,100,95
+2026-08-13,Idli Set,118,127,65
+2026-08-13,Chicken Biryani,77,83,210
+2026-08-13,Veg Meals,97,113,140
+2026-08-13,Paneer Butter Masala,58,68,190
+2026-08-13,Filter Coffee,182,198,35
+2026-08-13,Ghee Roast,74,85,110
+2026-08-13,Lemon Rice,62,79,85
+2026-08-14,Masala Dosa,93,93,95
+2026-08-14,Idli Set,115,115,65
+2026-08-14,Chicken Biryani,79,91,210
+2026-08-14,Veg Meals,126,136,140
+2026-08-14,Paneer Butter Masala,56,64,190
+2026-08-14,Filter Coffee,142,142,35
+2026-08-14,Ghee Roast,54,54,110
+2026-08-14,Lemon Rice,65,71,85
+2026-08-15,Masala Dosa,124,133,95
+2026-08-15,Idli Set,172,191,65
+2026-08-15,Chicken Biryani,93,98,210
+2026-08-15,Veg Meals,123,123,140
+2026-08-15,Paneer Butter Masala,67,87,190
+2026-08-15,Filter Coffee,210,213,35
+2026-08-15,Ghee Roast,77,77,110
+2026-08-15,Lemon Rice,77,86,85
+2026-08-16,Masala Dosa,112,134,95
+2026-08-16,Idli Set,172,177,65
+2026-08-16,Chicken Biryani,98,102,210
+2026-08-16,Veg Meals,126,126,140
+2026-08-16,Paneer Butter Masala,71,89,190
+2026-08-16,Filter Coffee,223,223,35
+2026-08-16,Ghee Roast,100,128,110
+2026-08-16,Lemon Rice,77,77,85
+2026-08-17,Masala Dosa,85,97,95
+2026-08-17,Idli Set,113,121,65
+2026-08-17,Chicken Biryani,82,82,210
+2026-08-17,Veg Meals,136,160,140
+2026-08-17,Paneer Butter Masala,37,37,190
+2026-08-17,Filter Coffee,161,161,35
+2026-08-17,Ghee Roast,47,47,110
+2026-08-17,Lemon Rice,59,85,85
+2026-08-18,Masala Dosa,83,88,95
+2026-08-18,Idli Set,105,119,65
+2026-08-18,Chicken Biryani,77,104,210
+2026-08-18,Veg Meals,113,117,140
+2026-08-18,Paneer Butter Masala,54,57,190
+2026-08-18,Filter Coffee,143,154,35
+2026-08-18,Ghee Roast,66,76,110
+2026-08-18,Lemon Rice,64,67,85
+2026-08-19,Masala Dosa,100,125,95
+2026-08-19,Idli Set,111,136,65
+2026-08-19,Chicken Biryani,77,77,210
+2026-08-19,Veg Meals,141,151,140
+2026-08-19,Paneer Butter Masala,59,75,190
+2026-08-19,Filter Coffee,137,146,35
+2026-08-19,Ghee Roast,59,59,110
+2026-08-19,Lemon Rice,49,58,85
+2026-08-20,Masala Dosa,102,114,95
+2026-08-20,Idli Set,122,122,65
+2026-08-20,Chicken Biryani,70,72,210
+2026-08-20,Veg Meals,98,104,140
+2026-08-20,Paneer Butter Masala,50,50,190
+2026-08-20,Filter Coffee,165,165,35
+2026-08-20,Ghee Roast,68,81,110
+2026-08-20,Lemon Rice,63,76,85
+2026-08-21,Masala Dosa,77,81,95
+2026-08-21,Idli Set,131,145,65
+2026-08-21,Chicken Biryani,65,75,210
+2026-08-21,Veg Meals,126,132,140
+2026-08-21,Paneer Butter Masala,50,63,190
+2026-08-21,Filter Coffee,174,189,35
+2026-08-21,Ghee Roast,68,78,110
+2026-08-21,Lemon Rice,56,62,85
+2026-08-22,Masala Dosa,133,139,95
+2026-08-22,Idli Set,157,160,65
+2026-08-22,Chicken Biryani,105,105,210
+2026-08-22,Veg Meals,150,150,140
+2026-08-22,Paneer Butter Masala,58,68,190
+2026-08-22,Filter Coffee,214,225,35
+2026-08-22,Ghee Roast,93,97,110
+2026-08-22,Lemon Rice,79,79,85
+2026-08-23,Masala Dosa,133,147,95
+2026-08-23,Idli Set,167,177,65
+2026-08-23,Chicken Biryani,92,97,210
+2026-08-23,Veg Meals,146,154,140
+2026-08-23,Paneer Butter Masala,58,58,190
+2026-08-23,Filter Coffee,216,217,35
+2026-08-23,Ghee Roast,77,83,110
+2026-08-23,Lemon Rice,64,79,85
+2026-08-24,Masala Dosa,105,112,95
+2026-08-24,Idli Set,112,112,65
+2026-08-24,Chicken Biryani,62,62,210
+2026-08-24,Veg Meals,114,129,140
+2026-08-24,Paneer Butter Masala,49,52,190
+2026-08-24,Filter Coffee,174,186,35
+2026-08-24,Ghee Roast,76,84,110
+2026-08-24,Lemon Rice,57,60,85
+2026-08-25,Masala Dosa,98,122,95
+2026-08-25,Idli Set,120,120,65
+2026-08-25,Chicken Biryani,59,59,210
+2026-08-25,Veg Meals,110,110,140
+2026-08-25,Paneer Butter Masala,32,32,190
+2026-08-25,Filter Coffee,149,163,35
+2026-08-25,Ghee Roast,49,49,110
+2026-08-25,Lemon Rice,63,68,85
+2026-08-26,Masala Dosa,101,116,95
+2026-08-26,Idli Set,123,123,65
+2026-08-26,Chicken Biryani,79,92,210
+2026-08-26,Veg Meals,99,99,140
+2026-08-26,Paneer Butter Masala,58,62,190
+2026-08-26,Filter Coffee,163,171,35
+2026-08-26,Ghee Roast,76,87,110
+2026-08-26,Lemon Rice,60,75,85
+2026-08-27,Masala Dosa,119,141,95
+2026-08-27,Idli Set,135,135,65
+2026-08-27,Chicken Biryani,110,110,210
+2026-08-27,Veg Meals,107,108,140
+2026-08-27,Paneer Butter Masala,61,73,190
+2026-08-27,Filter Coffee,143,154,35
+2026-08-27,Ghee Roast,73,78,110
+2026-08-27,Lemon Rice,53,54,85
+2026-08-28,Masala Dosa,91,99,95
+2026-08-28,Idli Set,121,136,65
+2026-08-28,Chicken Biryani,63,63,210
+2026-08-28,Veg Meals,103,124,140
+2026-08-28,Paneer Butter Masala,48,79,190
+2026-08-28,Filter Coffee,176,176,35
+2026-08-28,Ghee Roast,62,72,110
+2026-08-28,Lemon Rice,54,86,85
+2026-08-29,Masala Dosa,110,125,95
+2026-08-29,Idli Set,182,189,65
+2026-08-29,Chicken Biryani,91,96,210
+2026-08-29,Veg Meals,145,162,140
+2026-08-29,Paneer Butter Masala,59,59,190
+2026-08-29,Filter Coffee,215,216,35
+2026-08-29,Ghee Roast,69,70,110
+2026-08-29,Lemon Rice,68,82,85
+2026-08-30,Masala Dosa,142,169,95
+2026-08-30,Idli Set,153,156,65
+2026-08-30,Chicken Biryani,107,126,210
+2026-08-30,Veg Meals,135,142,140
+2026-08-30,Paneer Butter Masala,77,84,190
+2026-08-30,Filter Coffee,205,214,35
+2026-08-30,Ghee Roast,88,88,110
+2026-08-30,Lemon Rice,72,72,85
+2026-08-31,Masala Dosa,94,121,95
+2026-08-31,Idli Set,140,147,65
+2026-08-31,Chicken Biryani,72,77,210
+2026-08-31,Veg Meals,126,128,140
+2026-08-31,Paneer Butter Masala,54,54,190
+2026-08-31,Filter Coffee,166,191,35
+2026-08-31,Ghee Roast,53,73,110
+2026-08-31,Lemon Rice,49,56,85
+2026-09-01,Masala Dosa,95,111,95
+2026-09-01,Idli Set,73,73,65
+2026-09-01,Chicken Biryani,76,84,210
+2026-09-01,Veg Meals,102,108,140
+2026-09-01,Paneer Butter Masala,45,49,190
+2026-09-01,Filter Coffee,156,166,35
+2026-09-01,Ghee Roast,73,95,110
+2026-09-01,Lemon Rice,58,63,85
+2026-09-02,Masala Dosa,97,102,95
+2026-09-02,Idli Set,120,120,65
+2026-09-02,Chicken Biryani,83,83,210
+2026-09-02,Veg Meals,93,93,140
+2026-09-02,Paneer Butter Masala,58,65,190
+2026-09-02,Filter Coffee,194,205,35
+2026-09-02,Ghee Roast,53,53,110
+2026-09-02,Lemon Rice,68,68,85
+2026-09-03,Masala Dosa,85,91,95
+2026-09-03,Idli Set,125,125,65
+2026-09-03,Chicken Biryani,78,81,210
+2026-09-03,Veg Meals,81,94,140
+2026-09-03,Paneer Butter Masala,47,68,190
+2026-09-03,Filter Coffee,142,142,35
+2026-09-03,Ghee Roast,70,70,110
+2026-09-03,Lemon Rice,58,72,85
+2026-09-04,Masala Dosa,85,85,95
+2026-09-04,Idli Set,132,138,65
+2026-09-04,Chicken Biryani,93,107,210
+2026-09-04,Veg Meals,144,144,140
+2026-09-04,Paneer Butter Masala,49,49,190
+2026-09-04,Filter Coffee,195,211,35
+2026-09-04,Ghee Roast,75,75,110
+2026-09-04,Lemon Rice,45,45,85
+2026-09-05,Masala Dosa,140,153,95
+2026-09-05,Idli Set,158,175,65
+2026-09-05,Chicken Biryani,108,126,210
+2026-09-05,Veg Meals,121,122,140
+2026-09-05,Paneer Butter Masala,66,78,190
+2026-09-05,Filter Coffee,233,233,35
+2026-09-05,Ghee Roast,87,117,110
+2026-09-05,Lemon Rice,83,100,85
+2026-09-06,Masala Dosa,122,138,95
+2026-09-06,Idli Set,188,197,65
+2026-09-06,Chicken Biryani,112,112,210
+2026-09-06,Veg Meals,150,167,140
+2026-09-06,Paneer Butter Masala,61,80,190
+2026-09-06,Filter Coffee,204,204,35
+2026-09-06,Ghee Roast,87,114,110
+2026-09-06,Lemon Rice,81,98,85
+2026-09-07,Masala Dosa,90,99,95
+2026-09-07,Idli Set,113,115,65
+2026-09-07,Chicken Biryani,89,97,210
+2026-09-07,Veg Meals,132,138,140
+2026-09-07,Paneer Butter Masala,51,72,190
+2026-09-07,Filter Coffee,154,154,35
+2026-09-07,Ghee Roast,79,91,110
+2026-09-07,Lemon Rice,48,56,85
+2026-09-08,Masala Dosa,93,118,95
+2026-09-08,Idli Set,120,122,65
+2026-09-08,Chicken Biryani,70,70,210
+2026-09-08,Veg Meals,99,99,140
+2026-09-08,Paneer Butter Masala,38,38,190
+2026-09-08,Filter Coffee,137,137,35
+2026-09-08,Ghee Roast,65,66,110
+2026-09-08,Lemon Rice,54,67,85
+2026-09-09,Masala Dosa,97,101,95
+2026-09-09,Idli Set,124,148,65
+2026-09-09,Chicken Biryani,84,97,210
+2026-09-09,Veg Meals,82,83,140
+2026-09-09,Paneer Butter Masala,40,44,190
+2026-09-09,Filter Coffee,181,182,35
+2026-09-09,Ghee Roast,72,72,110
+2026-09-09,Lemon Rice,59,59,85
+2026-09-10,Masala Dosa,95,107,95
+2026-09-10,Idli Set,138,145,65
+2026-09-10,Chicken Biryani,99,103,210
+2026-09-10,Veg Meals,89,89,140
+2026-09-10,Paneer Butter Masala,62,66,190
+2026-09-10,Filter Coffee,152,173,35
+2026-09-10,Ghee Roast,79,88,110
+2026-09-10,Lemon Rice,53,65,85
+2026-09-11,Masala Dosa,87,87,95
+2026-09-11,Idli Set,133,133,65
+2026-09-11,Chicken Biryani,87,100,210
+2026-09-11,Veg Meals,140,151,140
+2026-09-11,Paneer Butter Masala,40,40,190
+2026-09-11,Filter Coffee,176,188,35
+2026-09-11,Ghee Roast,65,65,110
+2026-09-11,Lemon Rice,61,79,85
+2026-09-12,Masala Dosa,139,166,95
+2026-09-12,Idli Set,158,177,65
+2026-09-12,Chicken Biryani,118,138,210
+2026-09-12,Veg Meals,152,168,140
+2026-09-12,Paneer Butter Masala,55,55,190
+2026-09-12,Filter Coffee,237,242,35
+2026-09-12,Ghee Roast,87,89,110
+2026-09-12,Lemon Rice,76,86,85
+2026-09-13,Masala Dosa,112,121,95
+2026-09-13,Idli Set,167,174,65
+2026-09-13,Chicken Biryani,96,112,210
+2026-09-13,Veg Meals,167,169,140
+2026-09-13,Paneer Butter Masala,73,90,190
+2026-09-13,Filter Coffee,168,168,35
+2026-09-13,Ghee Roast,83,99,110
+2026-09-13,Lemon Rice,81,94,85
+2026-09-14,Masala Dosa,104,104,95
+2026-09-14,Idli Set,117,117,65
+2026-09-14,Chicken Biryani,81,88,210
+2026-09-14,Veg Meals,117,118,140
+2026-09-14,Paneer Butter Masala,58,75,190
+2026-09-14,Filter Coffee,205,220,35
+2026-09-14,Ghee Roast,71,86,110
+2026-09-14,Lemon Rice,68,69,85
+2026-09-15,Masala Dosa,113,138,95
+2026-09-15,Idli Set,160,168,65
+2026-09-15,Chicken Biryani,85,97,210
+2026-09-15,Veg Meals,115,129,140
+2026-09-15,Paneer Butter Masala,52,58,190
+2026-09-15,Filter Coffee,209,219,35
+2026-09-15,Ghee Roast,71,88,110
+2026-09-15,Lemon Rice,65,76,85
+2026-09-16,Masala Dosa,94,94,95
+2026-09-16,Idli Set,128,128,65
+2026-09-16,Chicken Biryani,80,80,210
+2026-09-16,Veg Meals,127,142,140
+2026-09-16,Paneer Butter Masala,54,61,190
+2026-09-16,Filter Coffee,172,172,35
+2026-09-16,Ghee Roast,62,69,110
+2026-09-16,Lemon Rice,66,73,85
+2026-09-17,Masala Dosa,88,97,95
+2026-09-17,Idli Set,122,122,65
+2026-09-17,Chicken Biryani,85,91,210
+2026-09-17,Veg Meals,130,145,140
+2026-09-17,Paneer Butter Masala,57,68,190
+2026-09-17,Filter Coffee,159,159,35
+2026-09-17,Ghee Roast,59,96,110
+2026-09-17,Lemon Rice,56,62,85
+2026-09-18,Masala Dosa,95,100,95
+2026-09-18,Idli Set,113,113,65
+2026-09-18,Chicken Biryani,68,68,210
+2026-09-18,Veg Meals,114,115,140
+2026-09-18,Paneer Butter Masala,49,59,190
+2026-09-18,Filter Coffee,165,182,35
+2026-09-18,Ghee Roast,67,77,110
+2026-09-18,Lemon Rice,55,70,85
+2026-09-19,Masala Dosa,120,132,95
+2026-09-19,Idli Set,170,176,65
+2026-09-19,Chicken Biryani,105,109,210
+2026-09-19,Veg Meals,162,179,140
+2026-09-19,Paneer Butter Masala,65,65,190
+2026-09-19,Filter Coffee,199,200,35
+2026-09-19,Ghee Roast,86,98,110
+2026-09-19,Lemon Rice,74,94,85
+2026-09-20,Masala Dosa,112,112,95
+2026-09-20,Idli Set,141,141,65
+2026-09-20,Chicken Biryani,97,100,210
+2026-09-20,Veg Meals,137,142,140
+2026-09-20,Paneer Butter Masala,64,66,190
+2026-09-20,Filter Coffee,250,270,35
+2026-09-20,Ghee Roast,80,101,110
+2026-09-20,Lemon Rice,69,69,85
+2026-09-21,Masala Dosa,102,102,95
+2026-09-21,Idli Set,136,136,65
+2026-09-21,Chicken Biryani,82,88,210
+2026-09-21,Veg Meals,137,137,140
+2026-09-21,Paneer Butter Masala,53,67,190
+2026-09-21,Filter Coffee,172,172,35
+2026-09-21,Ghee Roast,70,79,110
+2026-09-21,Lemon Rice,69,69,85
+2026-09-22,Masala Dosa,95,106,95
+2026-09-22,Idli Set,130,136,65
+2026-09-22,Chicken Biryani,83,84,210
+2026-09-22,Veg Meals,106,118,140
+2026-09-22,Paneer Butter Masala,47,67,190
+2026-09-22,Filter Coffee,176,176,35
+2026-09-22,Ghee Roast,73,83,110
+2026-09-22,Lemon Rice,69,89,85
+2026-09-23,Masala Dosa,96,97,95
+2026-09-23,Idli Set,122,122,65
+2026-09-23,Chicken Biryani,76,87,210
+2026-09-23,Veg Meals,117,120,140
+2026-09-23,Paneer Butter Masala,49,60,190
+2026-09-23,Filter Coffee,166,166,35
+2026-09-23,Ghee Roast,70,75,110
+2026-09-23,Lemon Rice,57,73,85
+2026-09-24,Masala Dosa,109,117,95
+2026-09-24,Idli Set,135,148,65
+2026-09-24,Chicken Biryani,83,100,210
+2026-09-24,Veg Meals,137,146,140
+2026-09-24,Paneer Butter Masala,56,73,190
+2026-09-24,Filter Coffee,168,168,35
+2026-09-24,Ghee Roast,70,70,110
+2026-09-24,Lemon Rice,77,94,85
+2026-09-25,Masala Dosa,102,111,95
+2026-09-25,Idli Set,158,158,65
+2026-09-25,Chicken Biryani,73,75,210
+2026-09-25,Veg Meals,111,111,140
+2026-09-25,Paneer Butter Masala,54,63,190
+2026-09-25,Filter Coffee,162,186,35
+2026-09-25,Ghee Roast,55,55,110
+2026-09-25,Lemon Rice,67,73,85
+2026-09-26,Masala Dosa,130,132,95
+2026-09-26,Idli Set,152,154,65
+2026-09-26,Chicken Biryani,98,111,210
+2026-09-26,Veg Meals,140,156,140
+2026-09-26,Paneer Butter Masala,70,88,190
+2026-09-26,Filter Coffee,240,256,35
+2026-09-26,Ghee Roast,95,98,110
+2026-09-26,Lemon Rice,69,69,85
+2026-09-27,Masala Dosa,128,129,95
+2026-09-27,Idli Set,173,186,65
+2026-09-27,Chicken Biryani,90,90,210
+2026-09-27,Veg Meals,142,145,140
+2026-09-27,Paneer Butter Masala,64,64,190
+2026-09-27,Filter Coffee,215,215,35
+2026-09-27,Ghee Roast,73,88,110
+2026-09-27,Lemon Rice,72,74,85
+2026-09-28,Masala Dosa,79,79,95
+2026-09-28,Idli Set,128,132,65
+2026-09-28,Chicken Biryani,93,105,210
+2026-09-28,Veg Meals,114,130,140
+2026-09-28,Paneer Butter Masala,60,72,190
+2026-09-28,Filter Coffee,171,189,35
+2026-09-28,Ghee Roast,85,100,110
+2026-09-28,Lemon Rice,77,94,85
+2026-09-29,Masala Dosa,107,107,95
+2026-09-29,Idli Set,118,126,65
+2026-09-29,Chicken Biryani,69,71,210
+2026-09-29,Veg Meals,128,129,140
+2026-09-29,Paneer Butter Masala,51,51,190
+2026-09-29,Filter Coffee,169,187,35
+2026-09-29,Ghee Roast,73,84,110
+2026-09-29,Lemon Rice,77,98,85
+2026-09-30,Masala Dosa,91,112,95
+2026-09-30,Idli Set,125,133,65
+2026-09-30,Chicken Biryani,84,103,210
+2026-09-30,Veg Meals,103,116,140
+2026-09-30,Paneer Butter Masala,57,73,190
+2026-09-30,Filter Coffee,175,193,35
+2026-09-30,Ghee Roast,66,85,110
+2026-09-30,Lemon Rice,61,61,85
+2026-10-01,Masala Dosa,105,115,95
+2026-10-01,Idli Set,129,130,65
+2026-10-01,Chicken Biryani,76,76,210
+2026-10-01,Veg Meals,136,136,140
+2026-10-01,Paneer Butter Masala,50,69,190
+2026-10-01,Filter Coffee,190,205,35
+2026-10-01,Ghee Roast,83,88,110
+2026-10-01,Lemon Rice,58,74,85
+2026-10-02,Masala Dosa,110,115,95
+2026-10-02,Idli Set,116,136,65
+2026-10-02,Chicken Biryani,83,83,210
+2026-10-02,Veg Meals,122,122,140
+2026-10-02,Paneer Butter Masala,48,48,190
+2026-10-02,Filter Coffee,167,167,35
+2026-10-02,Ghee Roast,67,82,110
+2026-10-02,Lemon Rice,67,81,85
+2026-10-03,Masala Dosa,138,142,95
+2026-10-03,Idli Set,170,183,65
+2026-10-03,Chicken Biryani,121,138,210
+2026-10-03,Veg Meals,165,183,140
+2026-10-03,Paneer Butter Masala,63,63,190
+2026-10-03,Filter Coffee,242,252,35
+2026-10-03,Ghee Roast,90,93,110
+2026-10-03,Lemon Rice,78,90,85
+2026-10-04,Masala Dosa,129,129,95
+2026-10-04,Idli Set,172,174,65
+2026-10-04,Chicken Biryani,97,109,210
+2026-10-04,Veg Meals,143,144,140
+2026-10-04,Paneer Butter Masala,63,74,190
+2026-10-04,Filter Coffee,222,222,35
+2026-10-04,Ghee Roast,84,90,110
+2026-10-04,Lemon Rice,82,82,85
+2026-10-05,Masala Dosa,107,107,95
+2026-10-05,Idli Set,173,173,65
+2026-10-05,Chicken Biryani,77,87,210
+2026-10-05,Veg Meals,107,123,140
+2026-10-05,Paneer Butter Masala,64,68,190
+2026-10-05,Filter Coffee,183,186,35
+2026-10-05,Ghee Roast,72,94,110
+2026-10-05,Lemon Rice,71,71,85
+2026-10-06,Masala Dosa,118,138,95
+2026-10-06,Idli Set,142,143,65
+2026-10-06,Chicken Biryani,85,85,210
+2026-10-06,Veg Meals,124,129,140
+2026-10-06,Paneer Butter Masala,41,58,190
+2026-10-06,Filter Coffee,184,203,35
+2026-10-06,Ghee Roast,71,81,110
+2026-10-06,Lemon Rice,73,85,85
+2026-10-07,Masala Dosa,105,145,95
+2026-10-07,Idli Set,133,143,65
+2026-10-07,Chicken Biryani,100,100,210
+2026-10-07,Veg Meals,99,99,140
+2026-10-07,Paneer Butter Masala,57,71,190
+2026-10-07,Filter Coffee,189,189,35
+2026-10-07,Ghee Roast,80,100,110
+2026-10-07,Lemon Rice,65,73,85
+2026-10-08,Masala Dosa,109,121,95
+2026-10-08,Idli Set,142,142,65
+2026-10-08,Chicken Biryani,79,79,210
+2026-10-08,Veg Meals,127,140,140
+2026-10-08,Paneer Butter Masala,54,65,190
+2026-10-08,Filter Coffee,151,168,35
+2026-10-08,Ghee Roast,69,78,110
+2026-10-08,Lemon Rice,73,73,85
+2026-10-09,Masala Dosa,115,124,95
+2026-10-09,Idli Set,136,150,65
+2026-10-09,Chicken Biryani,74,88,210
+2026-10-09,Veg Meals,120,138,140
+2026-10-09,Paneer Butter Masala,53,57,190
+2026-10-09,Filter Coffee,188,195,35
+2026-10-09,Ghee Roast,63,69,110
+2026-10-09,Lemon Rice,74,81,85
+2026-10-10,Masala Dosa,118,133,95
+2026-10-10,Idli Set,130,130,65
+2026-10-10,Chicken Biryani,106,116,210
+2026-10-10,Veg Meals,151,151,140
+2026-10-10,Paneer Butter Masala,61,61,190
+2026-10-10,Filter Coffee,223,223,35
+2026-10-10,Ghee Roast,90,101,110
+2026-10-10,Lemon Rice,70,73,85
+2026-10-11,Masala Dosa,136,159,95
+2026-10-11,Idli Set,149,160,65
+2026-10-11,Chicken Biryani,90,90,210
+2026-10-11,Veg Meals,169,184,140
+2026-10-11,Paneer Butter Masala,63,73,190
+2026-10-11,Filter Coffee,239,249,35
+2026-10-11,Ghee Roast,108,122,110
+2026-10-11,Lemon Rice,61,66,85
+2026-10-12,Masala Dosa,94,100,95
+2026-10-12,Idli Set,137,138,65
+2026-10-12,Chicken Biryani,75,97,210
+2026-10-12,Veg Meals,127,128,140
+2026-10-12,Paneer Butter Masala,58,73,190
+2026-10-12,Filter Coffee,203,203,35
+2026-10-12,Ghee Roast,79,81,110
+2026-10-12,Lemon Rice,74,80,85
+2026-10-13,Masala Dosa,78,86,95
+2026-10-13,Idli Set,111,117,65
+2026-10-13,Chicken Biryani,85,89,210
+2026-10-13,Veg Meals,98,98,140
+2026-10-13,Paneer Butter Masala,50,56,190
+2026-10-13,Filter Coffee,207,222,35
+2026-10-13,Ghee Roast,69,90,110
+2026-10-13,Lemon Rice,56,71,85
+2026-10-14,Masala Dosa,101,111,95
+2026-10-14,Idli Set,146,147,65
+2026-10-14,Chicken Biryani,93,101,210
+2026-10-14,Veg Meals,150,155,140
+2026-10-14,Paneer Butter Masala,62,76,190
+2026-10-14,Filter Coffee,160,182,35
+2026-10-14,Ghee Roast,51,51,110
+2026-10-14,Lemon Rice,72,91,85
+2026-10-15,Masala Dosa,103,108,95
+2026-10-15,Idli Set,160,175,65
+2026-10-15,Chicken Biryani,80,95,210
+2026-10-15,Veg Meals,104,106,140
+2026-10-15,Paneer Butter Masala,35,35,190
+2026-10-15,Filter Coffee,160,180,35
+2026-10-15,Ghee Roast,65,67,110
+2026-10-15,Lemon Rice,58,75,85
+2026-10-16,Masala Dosa,103,116,95
+2026-10-16,Idli Set,132,132,65
+2026-10-16,Chicken Biryani,77,93,210
+2026-10-16,Veg Meals,119,135,140
+2026-10-16,Paneer Butter Masala,37,56,190
+2026-10-16,Filter Coffee,173,203,35
+2026-10-16,Ghee Roast,69,77,110
+2026-10-16,Lemon Rice,70,70,85
+2026-10-17,Masala Dosa,138,140,95
+2026-10-17,Idli Set,190,206,65
+2026-10-17,Chicken Biryani,112,113,210
+2026-10-17,Veg Meals,147,158,140
+2026-10-17,Paneer Butter Masala,57,59,190
+2026-10-17,Filter Coffee,242,242,35
+2026-10-17,Ghee Roast,101,103,110
+2026-10-17,Lemon Rice,82,82,85
+2026-10-18,Masala Dosa,134,147,95
+2026-10-18,Idli Set,188,210,65
+2026-10-18,Chicken Biryani,119,129,210
+2026-10-18,Veg Meals,135,156,140
+2026-10-18,Paneer Butter Masala,61,65,190
+2026-10-18,Filter Coffee,243,255,35
+2026-10-18,Ghee Roast,104,112,110
+2026-10-18,Lemon Rice,71,76,85
+2026-10-19,Masala Dosa,105,109,95
+2026-10-19,Idli Set,158,164,65
+2026-10-19,Chicken Biryani,73,86,210
+2026-10-19,Veg Meals,106,131,140
+2026-10-19,Paneer Butter Masala,51,51,190
+2026-10-19,Filter Coffee,204,236,35
+2026-10-19,Ghee Roast,58,75,110
+2026-10-19,Lemon Rice,70,80,85
+2026-10-20,Masala Dosa,107,120,95
+2026-10-20,Idli Set,128,150,65
+2026-10-20,Chicken Biryani,74,102,210
+2026-10-20,Veg Meals,136,136,140
+2026-10-20,Paneer Butter Masala,55,77,190
+2026-10-20,Filter Coffee,174,180,35
+2026-10-20,Ghee Roast,70,90,110
+2026-10-20,Lemon Rice,62,70,85
+2026-10-21,Masala Dosa,109,115,95
+2026-10-21,Idli Set,121,121,65
+2026-10-21,Chicken Biryani,69,69,210
+2026-10-21,Veg Meals,99,100,140
+2026-10-21,Paneer Butter Masala,57,66,190
+2026-10-21,Filter Coffee,166,166,35
+2026-10-21,Ghee Roast,60,60,110
+2026-10-21,Lemon Rice,58,73,85
+2026-10-22,Masala Dosa,88,96,95
+2026-10-22,Idli Set,129,161,65
+2026-10-22,Chicken Biryani,70,80,210
+2026-10-22,Veg Meals,117,117,140
+2026-10-22,Paneer Butter Masala,57,67,190
+2026-10-22,Filter Coffee,164,176,35
+2026-10-22,Ghee Roast,77,98,110
+2026-10-22,Lemon Rice,63,86,85
+2026-10-23,Masala Dosa,90,90,95
+2026-10-23,Idli Set,146,153,65
+2026-10-23,Chicken Biryani,79,96,210
+2026-10-23,Veg Meals,115,133,140
+2026-10-23,Paneer Butter Masala,55,71,190
+2026-10-23,Filter Coffee,198,211,35
+2026-10-23,Ghee Roast,66,83,110
+2026-10-23,Lemon Rice,67,95,85
+2026-10-24,Masala Dosa,135,151,95
+2026-10-24,Idli Set,162,166,65
+2026-10-24,Chicken Biryani,105,105,210
+2026-10-24,Veg Meals,137,144,140
+2026-10-24,Paneer Butter Masala,69,79,190
+2026-10-24,Filter Coffee,252,256,35
+2026-10-24,Ghee Roast,98,105,110
+2026-10-24,Lemon Rice,82,93,85
+2026-10-25,Masala Dosa,108,117,95
+2026-10-25,Idli Set,163,163,65
+2026-10-25,Chicken Biryani,91,95,210
+2026-10-25,Veg Meals,128,145,140
+2026-10-25,Paneer Butter Masala,59,59,190
+2026-10-25,Filter Coffee,218,234,35
+2026-10-25,Ghee Roast,88,93,110
+2026-10-25,Lemon Rice,81,88,85
+2026-10-26,Masala Dosa,86,94,95
+2026-10-26,Idli Set,131,169,65
+2026-10-26,Chicken Biryani,85,88,210
+2026-10-26,Veg Meals,134,140,140
+2026-10-26,Paneer Butter Masala,56,56,190
+2026-10-26,Filter Coffee,215,217,35
+2026-10-26,Ghee Roast,77,96,110
+2026-10-26,Lemon Rice,65,73,85
+2026-10-27,Masala Dosa,111,126,95
+2026-10-27,Idli Set,123,133,65
+2026-10-27,Chicken Biryani,78,79,210
+2026-10-27,Veg Meals,114,134,140
+2026-10-27,Paneer Butter Masala,65,99,190
+2026-10-27,Filter Coffee,184,184,35
+2026-10-27,Ghee Roast,67,91,110
+2026-10-27,Lemon Rice,57,62,85
+2026-10-28,Masala Dosa,98,123,95
+2026-10-28,Idli Set,125,144,65
+2026-10-28,Chicken Biryani,99,105,210
+2026-10-28,Veg Meals,121,121,140
+2026-10-28,Paneer Butter Masala,55,61,190
+2026-10-28,Filter Coffee,136,148,35
+2026-10-28,Ghee Roast,68,68,110
+2026-10-28,Lemon Rice,57,58,85
+2026-10-29,Masala Dosa,99,104,95
+2026-10-29,Idli Set,124,124,65
+2026-10-29,Chicken Biryani,90,93,210
+2026-10-29,Veg Meals,121,127,140
+2026-10-29,Paneer Butter Masala,58,64,190
+2026-10-29,Filter Coffee,202,211,35
+2026-10-29,Ghee Roast,81,101,110
+2026-10-29,Lemon Rice,57,74,85
+2026-10-30,Masala Dosa,122,122,95
+2026-10-30,Idli Set,139,143,65
+2026-10-30,Chicken Biryani,91,104,210
+2026-10-30,Veg Meals,114,135,140
+2026-10-30,Paneer Butter Masala,51,58,190
+2026-10-30,Filter Coffee,206,234,35
+2026-10-30,Ghee Roast,71,87,110
+2026-10-30,Lemon Rice,61,61,85
+2026-10-31,Masala Dosa,117,117,95
+2026-10-31,Idli Set,168,172,65
+2026-10-31,Chicken Biryani,109,130,210
+2026-10-31,Veg Meals,158,193,140
+2026-10-31,Paneer Butter Masala,68,84,190
+2026-10-31,Filter Coffee,241,264,35
+2026-10-31,Ghee Roast,90,106,110
+2026-10-31,Lemon Rice,96,97,85
+2026-11-01,Masala Dosa,130,143,95
+2026-11-01,Idli Set,168,168,65
+2026-11-01,Chicken Biryani,126,132,210
+2026-11-01,Veg Meals,175,178,140
+2026-11-01,Paneer Butter Masala,69,85,190
+2026-11-01,Filter Coffee,228,228,35
+2026-11-01,Ghee Roast,88,99,110
+2026-11-01,Lemon Rice,80,89,85
