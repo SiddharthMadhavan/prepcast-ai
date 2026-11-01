@@ -121,7 +121,9 @@ def lab_upload():
 @app.post('/api/lab/scenario')
 def lab_scenario():
     try:
-        body=request.get_json(silent=True) or {}; horizon=body.get('horizon',7)
+        body=request.get_json(silent=True) or {}
+        if not isinstance(body,dict): raise ValueError('Expected a JSON object.')
+        horizon=body.get('horizon',7)
         if type(horizon) is not int or horizon not in (1,7,30): raise ValueError('Invalid horizon.')
         supplied=body.get('rows'); edits=body.get('edits',{})
         if not isinstance(supplied,list) or not 14<=len(supplied)<=366 or not isinstance(edits,dict): raise ValueError('Provide 14–366 daily observations.')
