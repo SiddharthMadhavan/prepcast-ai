@@ -70,6 +70,32 @@ def forecast():
     except (ValueError,UnicodeDecodeError) as e: return jsonify(error=str(e)),400
 @app.errorhandler(413)
 def oversized(e): return jsonify(error='Maximum upload size is 2 MB.'),413
+def analytics(rows):
+    daily={}; dishes={}; weekday={i:[] for i in range(7)}
+    for r in rows:
+        waste=r['prepared']-r['sales']; revenue=r['sales']*r['price']
+        day=daily.setdefault(r['date'],dict(date=r['date'],sales=0,revenue=0,waste=0,prepared=0))
+        dish=dishes.setdefault(r['dish'],dict(dish=r['dish'],sales=0,revenue=0,waste=0,prepared=0,observations=0,zeroDays=0,soldAllPrepared=0,values=[]))
+        for entry in (day,dish):
+            for key,value in [('sales',r['sales']),('revenue',revenue),('waste',waste),('prepared',r['prepared'])]: entry[key]+=value
+        dish['observations']+=1;dish['zeroDays']+=r['sales']==0;dish['soldAllPrepared']+=r['prepared']>0 and r['sales']==r['prepared'];dish['values'].append(r['sales'])
+    ordered=sorted(daily.values(),key=lambda x:x['date']); last=date.fromisoformat(ordered[-1]['date'])
+    recent=[r for r in ordered if date.fromisoformat(r['date'])>last-timedelta(days=14)]
+    previous=[r for r in ordered if last-timedelta(days=28)<date.fromisoformat(r['date'])<=last-timedelta(days=14)]
+    def period(items):
+        return dict(days=len(items),dailySales=round(statistics.mean(r['sales'] for r in items),1) if items else None,dailyRevenue=round(statistics.mean(r['revenue'] for r in items),2) if items else None)
+    for r in ordered: weekday[date.fromisoformat(r['date']).weekday()].append(r['sales'])
+    for dish in dishes.values():
+        values=dish.pop('values');mean=statistics.mean(values)
+        dish['dailyMean']=round(mean,1);dish['cv']=round(statistics.stdev(values)/mean*100,1) if len(values)>1 and mean else 0
+        dish['wasteRate']=round(dish['waste']/dish['prepared']*100,1) if dish['prepared'] else 0
+    return dict(daily=ordered,dishes=sorted(dishes.values(),key=lambda x:x['sales'],reverse=True),weekdays=[dict(day=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'][i],mean=round(statistics.mean(v),1) if v else None,days=len(v)) for i,v in weekday.items()],recent=period(recent),previous=period(previous),recordedWaste=sum(r['waste'] for r in ordered),totalRevenue=sum(r['revenue'] for r in ordered),totalSales=sum(r['sales'] for r in ordered),observedDays=len(ordered),start=ordered[0]['date'],end=ordered[-1]['date'])
+@app.post('/api/analytics')
+def analytics_route():
+    try:
+        upload=request.files.get('file');rows=parse(upload.read().decode('utf-8')) if upload else DEMO
+        return jsonify(**analytics(rows),synthetic=not bool(upload),hasPrices=all(r['price']>0 for r in rows))
+    except (ValueError,UnicodeDecodeError) as e:return jsonify(error=str(e)),400
 # Scenario datasets are independent synthetic restaurants, not live POS integrations.
 LAB_SOURCES = [dict(id='neighborhood',name='Neighborhood Kitchen',description='Steady weekday trade / weekend lift'),dict(id='office',name='Office District',description='Weekday lunch traffic / quieter weekends'),dict(id='weekend',name='Weekend Bistro',description='Strong weekend peaks / higher variability')]
 def lab_rows(source):

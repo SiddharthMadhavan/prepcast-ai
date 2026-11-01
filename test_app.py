@@ -47,3 +47,19 @@ def test_lab_upload(client):
     result=client.post('/api/lab/upload',data={'file':(io.BytesIO(csv),'demo.csv')})
     assert result.status_code==200 and len(result.json['rows'])==112
     assert not result.json['synthetic']
+def test_analytics_totals_and_weekday_means(client):
+    from app import DEMO
+    d=client.post('/api/analytics').json
+    assert d['observedDays']==112 and len(d['dishes'])==8
+    assert d['totalSales']==sum(r['sales'] for r in DEMO)
+    assert d['totalRevenue']==sum(r['sales']*r['price'] for r in DEMO)
+    assert d['recordedWaste']==sum(r['prepared']-r['sales'] for r in DEMO)
+    assert all(x['days']==16 for x in d['weekdays'])
+    assert d['recent']['days']==14 and d['previous']['days']==14
+    assert abs(sum(r['sales'] for r in d['dishes'])-d['totalSales'])<.001
+
+def test_analytics_upload_uses_active_data(client):
+    content='date,dish,sales\n'+'\n'.join(f'2026-10-{i:02d},Dish,10' for i in range(1,15))
+    d=client.post('/api/analytics',data={'file':(io.BytesIO(content.encode()),'custom.csv')}).json
+    assert d['totalSales']==140 and not d['synthetic'] and not d['hasPrices']
+    assert d['previous']['dailySales'] is None
