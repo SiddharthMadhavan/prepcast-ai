@@ -3,6 +3,7 @@ import csv, io, math, random, statistics
 from datetime import date, timedelta
 from pathlib import Path
 from flask import Flask, request, jsonify, send_from_directory
+from forecasting import MODELS, forecast_path, evaluate_dish, model_evaluation
 app = Flask(__name__, static_folder='static')
 app.config['MAX_CONTENT_LENGTH'] = 2 * 1024 * 1024
 MENU = [('Masala Dosa',95,90),('Idli Set',65,120),('Chicken Biryani',210,75),('Veg Meals',140,105),('Paneer Butter Masala',190,48),('Filter Coffee',35,160),('Ghee Roast',110,64),('Lemon Rice',85,58)]
@@ -37,21 +38,24 @@ def predict(history,target):
     matching=[r['sales'] for r in history if date.fromisoformat(r['date']).weekday()==target.weekday()][-6:]
     recent=[r['sales'] for r in history[-14:]]
     return .75*statistics.mean(matching or recent)+.25*statistics.mean(recent)
-def analyze(rows,horizon):
+def analyze(rows,horizon,model='ensemble'):
+    if model not in MODELS: raise ValueError('Invalid forecasting model.')
     last=date.fromisoformat(max(r['date'] for r in rows)); dishes=sorted({r['dish'] for r in rows}); forecasts=[]; errors=[]; naive_errors=[]
     for dish in dishes:
         h=sorted([r for r in rows if r['dish']==dish],key=lambda r:r['date']); residual=[]
-        for i in range(max(7,len(h)-14),len(h)):
-            p=predict(h[:i],date.fromisoformat(h[i]['date'])); residual.append(h[i]['sales']-p); errors.append(abs(residual[-1])); naive_errors.append(abs(h[i]['sales']-statistics.mean(x['sales'] for x in h[max(0,i-7):i])))
+        residual, baseline, _ = evaluate_dish(h,model)
+        errors.extend(abs(r) for r in residual); naive_errors.extend(baseline)
         spread=statistics.stdev(residual) if len(residual)>1 else max(5,statistics.mean(r['sales'] for r in h)*.25)
-        for offset in range(1,horizon+1):
-            target=last+timedelta(days=offset); p=max(0,round(predict(h,target))); width=math.ceil(1.64*spread*math.sqrt(1+offset/14))
-            forecasts.append(dict(date=target.isoformat(),dish=dish,predicted=p,lower=max(0,p-width),upper=p+width,prep=math.ceil(p+spread*.5),price=h[-1]['price']))
+        targets=[last+timedelta(days=i) for i in range(1,horizon+1)]
+        values,used=forecast_path(h,targets,model)
+        for offset,(target,value) in enumerate(zip(targets,values),1):
+            p=max(0,round(value)); width=math.ceil(1.64*spread*math.sqrt(1+offset/14))
+            forecasts.append(dict(date=target.isoformat(),dish=dish,predicted=p,lower=max(0,p-width),upper=p+width,prep=math.ceil(p+spread*.5),price=h[-1]['price'],modelId=used))
     daily={}
     for r in rows:
         v=daily.setdefault(r['date'],dict(date=r['date'],sales=0,waste=0)); v['sales']+=r['sales']; v['waste']+=r['prepared']-r['sales']
     total=sum(r['sales'] for r in rows); waste=sum(r['prepared']-r['sales'] for r in rows)
-    return dict(forecasts=forecasts,history=sorted(daily.values(),key=lambda r:r['date'])[-28:],summary=dict(rows=len(rows),dishes=len(dishes),start=min(r['date'] for r in rows),end=last.isoformat(),sales=total,waste=waste,wasteRate=round(waste/(total+waste)*100,1) if total+waste else 0,mae=round(statistics.mean(errors),2) if errors else None,baselineMae=round(statistics.mean(naive_errors),2) if naive_errors else None,validationPoints=len(errors)),model='Weekday + recent mean ensemble',interval='Approximate 90% residual range; not calibrated')
+    return dict(forecasts=forecasts,history=sorted(daily.values(),key=lambda r:r['date'])[-28:],summary=dict(rows=len(rows),dishes=len(dishes),start=min(r['date'] for r in rows),end=last.isoformat(),sales=total,waste=waste,wasteRate=round(waste/(total+waste)*100,1) if total+waste else 0,mae=round(statistics.mean(errors),2) if errors else None,baselineMae=round(statistics.mean(naive_errors),2) if naive_errors else None,validationPoints=len(errors)),model=MODELS[model]+(' (ensemble fallback for short dish histories)' if any(r['modelId']!=model for r in forecasts) else ''),modelId=model,validationMethod='Final 14 observations per dish; recursive holdout; minimum 42 observations per dish',interval='Approximate 90% residual range; not calibrated')
 @app.get('/')
 def index(): return send_from_directory('static','index.html')
 @app.get('/health')
@@ -66,7 +70,14 @@ def forecast():
         horizon=int(request.form.get('horizon','7'))
         if horizon not in (1,7,30): raise ValueError('Horizon must be 1, 7 or 30 days.')
         upload=request.files.get('file'); rows=parse(upload.read().decode('utf-8')) if upload else DEMO
-        return jsonify(**analyze(rows,horizon),synthetic=not bool(upload))
+        model=request.form.get('model','ridge')
+        return jsonify(**analyze(rows,horizon,model),synthetic=not bool(upload))
+    except (ValueError,UnicodeDecodeError) as e: return jsonify(error=str(e)),400
+@app.post('/api/model-evaluation')
+def model_evaluation_route():
+    try:
+        upload=request.files.get('file'); rows=parse(upload.read().decode('utf-8')) if upload else DEMO
+        return jsonify(**model_evaluation(rows),synthetic=not bool(upload))
     except (ValueError,UnicodeDecodeError) as e: return jsonify(error=str(e)),400
 @app.errorhandler(413)
 def oversized(e): return jsonify(error='Maximum upload size is 2 MB.'),413
@@ -143,3 +154,4 @@ def lab_scenario():
         return jsonify(history=changed,baseline=base['forecasts'],forecast=scenario['forecasts'],model=scenario['model'],interval=scenario['interval'])
     except (ValueError,TypeError,KeyError,OverflowError) as e: return jsonify(error=str(e)),400
 if __name__=='__main__': app.run(host='0.0.0.0',port=8080)
+
